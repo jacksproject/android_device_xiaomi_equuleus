@@ -6,11 +6,24 @@
 
 $(call inherit-product, device/xiaomi/equuleus/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common VoidUI stuff.
+$(call inherit-product, vendor/aosp/config/common.mk)
+
+# Device Specific Flags
+TARGET_BOOT_ANIMATION_RES := 1080
+
+# VoidUI Environment Flags
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_INCLUDE_STOCK_ARCORE := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
+TARGET_SUPPORTS_QUICK_TAP  := true
+TARGET_USES_MINI_GAPPS := false
+
+# VoidUI Maintainer Flags
+VOID_MAINTAINER := JacksProject
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_equuleus
+PRODUCT_NAME := aosp_equuleus
 PRODUCT_DEVICE := equuleus
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 8 Pro
